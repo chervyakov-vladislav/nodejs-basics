@@ -1,16 +1,9 @@
-import { A } from './fileA';
-import http from 'node:http';
+#!/usr/bin/env node
 
-console.log('adsasd');
-console.log(A);
-console.log('');
+import { parseArgs } from './args';
 
-const server = http.createServer((_req, _res) => {
-  return;
-});
+const initCli = () => {
+  parseArgs();
+};
 
-server.listen(3000, () => {
-  console.log('server listen 3000');
-});
-
-const _a = 3;
+initCli();

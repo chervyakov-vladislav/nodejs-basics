@@ -1,14 +1,15 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import path from 'node:path';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-module.exports = (_env, argv) => {
+export default (_env, argv) => {
+  const __dirname = import.meta.dirname;
   const mode = argv.mode || 'development';
 
   return {
     mode,
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
-      filename: 'index.mjs',
+      filename: 'index.js',
       path: path.resolve(__dirname, 'dist'),
       module: true,
       library: {
